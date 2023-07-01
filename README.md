@@ -33,7 +33,7 @@ Please make the changes while the JSON in `./src/app.js`.
 
 ### ⛓️ Deploy
 
-Before deploying the smart contracts, please make sure you have a `Correct Network as ` in your Metamask wallet with sufficient funds, follow this [quickstart](https://www.npmjs.com/package/contract-wizard guide if you do not have one.
+Before deploying the smart contracts, please make sure you have a `Correct Network as ` in your Metamask wallet with sufficient funds, follow this [quickstart](https://www.npmjs.com/package/contract-wizard) guide if you do not have one.
 
 Also, make changes in `./scripts/deploy.js` (replace the greeter contract name with `<your-contract-name>`).
 
