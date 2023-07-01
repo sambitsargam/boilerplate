@@ -1,18 +1,14 @@
-//SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 <0.9.0;
 
 contract Greeter {
-    string private greeting;
+    string message = "Hello, world!";
 
-    constructor(string memory _greeting) {
-        greeting = _greeting;
+    function read() public view returns (string memory) {
+        return message;
     }
 
-    function greet() public view returns (string memory) {
-        return greeting;
-    }
-
-    function setGreeting(string memory _greeting) public {
-        greeting = _greeting;
+    function write(string memory newMessage) public {
+        message = newMessage;
     }
 }

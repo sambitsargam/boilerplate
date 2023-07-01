@@ -1,35 +1,61 @@
-# zkSync Hardhat project
 
-This project was scaffolded with [zk-wizard](https://github.com/sambitsargam/zk-wizard).
 
-## Project structure
+A full-stack starter template with React & Hardhat or Truffle to develop, deploy, and test Solidity smart contracts . The starter kit also includes pre-installed ` hardhat full code`,`Truffle code`, `tailwindcss`,`Metamask SDK`, `web3.js`, etc. packages.
 
-- `/contracts`: smart contracts.
-- `/deploy`: deployment and contract interaction scripts.
-- `/test`: test files
-- `hardhat.config.ts`: configuration file.
+## 📺 Quickstart
 
-## Commands
+<div align="center">
+</div>
 
-- `yarn hardhat compile` will compile the contracts.
-- `yarn run deploy` will execute the deployment script `/deploy/deploy-greeter.ts`. Requires [environment variable setup](#environment-variables).
-- `yarn run greet` will execute the script `/deploy/use-greeter.ts` which interacts with the Greeter contract deployed.
-- `yarn test`: run tests. **Check test requirements below.**
+### 🔑 Private key
 
-Both `yarn run deploy` and `yarn run greet` are configured in the `package.json` file and run `yarn hardhat deploy-zksync`.
+Ensure you create a `.env` file in the `root` directory. Then paste your [Metamask private key](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) in `.env` with the variable name `PRIVATE_KEY` as follows:
 
-### Environment variables
-
-In order to prevent users to leak private keys, this project includes the `dotenv` package which is used to load environment variables. It's used to load the wallet private key, required to run the deploy script.
-
-To use it, rename `.env.example` to `.env` and enter your private key.
-
-```
-PRIVATE_KEY=123cde574ccff....
+```sh
+PRIVATE_KEY=0x734...
 ```
 
-### Local testing
+### ⚙️ Compile
 
-In order to run test, you need to start the zkSync local environment. Please check [this section of the docs](https://v2-docs.zksync.io/api/hardhat/testing.html#prerequisites) which contains all the details.
+Now, you can write your contracts in `./contracts/` directory, replace `Greeter.sol` with `<your-contracts>.sol` file. To write tests, go to `./test` directory and create `<your-contracts>.test.js`.
 
-If you do not start the zkSync local environment, the tests will fail with error `Error: could not detect network (event="noNetwork", code=NETWORK_ERROR, version=providers/5.7.2)`
+```sh
+npx hardhat compile
+
+# for testing the smart contracts
+npx hardhat test
+```
+
+After successful compilation, the artifacts directory will be created in `./src/artifacts` with a JSON `/contracts/<your-contracts>.sol/<your-contracts>.json` containing ABI and Bytecode of your compiled smart contracts.
+
+Please make the changes while the JSON in `./src/app.js`.
+
+
+### ⛓️ Deploy
+
+Before deploying the smart contracts, please make sure you have a `Correct Network as ` in your Metamask wallet with sufficient funds, follow this [quickstart](https://www.npmjs.com/package/contract-wizard guide if you do not have one.
+
+Also, make changes in `./scripts/deploy.js` (replace the greeter contract name with `<your-contract-name>`).
+
+For deploying the smart contracts , type the following command:
+
+```sh
+npx hardhat run scripts/deploy.js
+```
+
+Copy-paste the deployed contract address src/App.js
+
+```sh
+<your-contract> deployed to: 0x...
+```
+
+### 💻 React client
+
+start react app
+
+```sh
+npm start
+# Starting the development server...
+```
+
+Don't forget to leave a star ⭐️ ~ <a href="https://twitter.com/sambitsargam" target="_blank"><img src="https://img.shields.io/twitter/follow/sambitsargam?style=social" alt="twitter" /></a>
